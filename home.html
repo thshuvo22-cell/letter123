@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Letter For You — Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="app">
+
+  <header class="header">
+    <div class="headerLeft">
+      <div class="brand">
+        <div class="brandIcon">💌</div>
+        <div>
+          <div class="brandTitle">Letter For You</div>
+          <div class="brandSub">Inbox • Sent • With Endless Love</div>
+        </div>
+      </div>
+    </div>
+    <div class="headerRight">
+      <span class="pill" id="whoPill">Logged in</span>
+      <a class="linkBtn" href="write.html">✍️ Write</a>
+      <button class="linkBtn" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid2">
+      <section class="panel">
+        <div class="panelTitle">📥 Inbox</div>
+        <div id="inbox"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panelTitle">📤 Sent</div>
+        <div id="sent"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Background music (hidden) -->
+  <audio id="bgm" preload="auto"></audio>
+
+  <script src="app.js"></script>
+  <script>initHome();</script>
+</body>
+</html>

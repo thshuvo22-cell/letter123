@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Write Letter</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="app">
+
+  <header class="header">
+    <div class="headerLeft">
+      <a class="linkBtn" href="home.html">← Back</a>
+      <div class="brand">
+        <div class="brandIcon">💌</div>
+        <div>
+          <div class="brandTitle">Write a Letter</div>
+          <div class="brandSub">Pick template • Customize • Send & Lock</div>
+        </div>
+      </div>
+    </div>
+    <div class="headerRight">
+      <span class="pill" id="whoPill">Logged in</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT -->
+    <aside class="side">
+      <div class="sideBlock">
+        <div class="sideTitle">🎨 Templates</div>
+
+        <input id="tplSearch" class="input" placeholder="Search templates (wax / rose / vintage / 3d)" />
+
+        <div class="chipRow" id="chipRow"></div>
+
+        <div class="row">
+          <select id="sortBy" class="select">
+            <option value="popular">Sort: Popular</option>
+            <option value="new">Sort: New</option>
+            <option value="name">Sort: Name</option>
+          </select>
+
+          <select id="tone" class="select">
+            <option value="warm">Tone: Warm</option>
+            <option value="pink">Tone: Pink</option>
+            <option value="sepia">Tone: Sepia</option>
+            <option value="midnight">Tone: Midnight</option>
+          </select>
+        </div>
+
+        <div id="tplGrid" class="tplGrid"></div>
+      </div>
+
+      <div class="sideBlock">
+        <div class="sideTitle">✨ Effects</div>
+
+        <label class="toggle"><input type="checkbox" id="fxHearts" checked> <span>Floating hearts</span></label>
+        <label class="toggle"><input type="checkbox" id="fxSparkle" checked> <span>Sparkles</span></label>
+        <label class="toggle"><input type="checkbox" id="fxGlow" checked> <span>Neon glow</span></label>
+
+        <div class="row">
+          <label class="label">Grain</label>
+          <input id="grain" type="range" min="0" max="100" value="55" class="range"/>
+        </div>
+
+        <div class="row">
+          <label class="label">Depth</label>
+          <input id="depth" type="range" min="0" max="100" value="70" class="range"/>
+        </div>
+
+        <div class="row">
+          <label class="label">Tilt</label>
+          <input id="tilt" type="range" min="0" max="100" value="70" class="range"/>
+        </div>
+
+        <div class="mutedSmall">Hover / move mouse over preview for real 3D tilt ✨</div>
+      </div>
+    </aside>
+
+    <!-- RIGHT -->
+    <section class="main">
+      <div class="panel">
+        <div class="panelTitle">📝 Write</div>
+
+        <div class="formGrid">
+          <input id="title" class="input" placeholder="Title"/>
+          <select id="fontPick" class="select">
+            <option value="font-serif" selected>Classic Serif</option>
+            <option value="font-elegant">Elegant</option>
+            <option value="font-hand">Handwritten</option>
+            <option value="font-modern">Modern</option>
+          </select>
+        </div>
+
+        <textarea id="body" class="textarea" placeholder="Write your letter..."></textarea>
+
+        <div class="formGrid">
+          <input id="sign" class="input" placeholder="Signature (e.g., Your Shuvo)"/>
+          <button id="sendBtn" class="btnPrimary">Send (Lock forever)</button>
+        </div>
+
+        <p id="msg" class="error"></p>
+        <div class="hint">Pressing Send permanently locks the letter and it cannot be edited.🔒</div>
+      </div>
+
+      <div class="panel">
+        <div class="panelTitle">👀 Preview (3D)</div>
+
+        <div class="previewStage">
+          <div id="fxLayer" class="fxLayer"></div>
+
+          <div id="card3d" class="card3d">
+            <div class="cardGlow"></div>
+            <div class="cardSheen"></div>
+
+            <article id="preview" class="letter tpl-parchment tone-warm font-serif">
+              <div class="letterMeta">
+                <div class="toLine" id="pvTo">To: ...</div>
+                <div class="stamp" id="pvStamp">SEALED WITH LOVE</div>
+              </div>
+
+              <h2 class="letterTitle" id="pvTitle">Your Title</h2>
+              <div class="letterBody" id="pvBody">Your letter text will appear here…</div>
+
+              <div class="letterFooter">
+                <div class="signature" id="pvSign">— Signature</div>
+                <div class="date" id="pvDate"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Background music (hidden) -->
+  <audio id="bgm" preload="auto"></audio>
+
+  <script src="app.js"></script>
+  <script>initWritePro();</script>
+</body>
+</html>

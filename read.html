@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Read Letter</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="app mode-read">
+
+  <header class="header">
+    <div class="headerLeft">
+      <a class="linkBtn" href="home.html">← Back</a>
+      <div class="brand">
+        <div class="brandIcon">💌</div>
+        <div>
+          <div class="brandTitle">Read Letter</div>
+          <div class="brandSub">Locked • Vintage • Effects</div>
+        </div>
+      </div>
+    </div>
+    <div class="headerRight">
+      <span class="pill" id="whoPill">Logged in</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panelTitle">💌 Letter</div>
+
+      <div class="previewStage">
+        <div id="fxLayerRead" class="fxLayer"></div>
+
+        <div id="card3dRead" class="card3d">
+          <div class="cardGlow"></div>
+          <div class="cardSheen"></div>
+          <article id="letterView" class="letter tpl-parchment tone-warm font-serif"></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Background music (hidden) -->
+  <audio id="bgm" preload="auto"></audio>
+
+  <script src="app.js"></script>
+  <script>initRead();</script>
+</body>
+</html>

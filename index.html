@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Letter for You — Login</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="app">
+
+  <div class="authWrap">
+    <div class="authCard">
+      <div class="authBrand">
+        <div class="brandIcon">💌</div>
+        <div>
+          <div class="brandTitle">Letter For You</div>
+          <div class="brandSub">Private app for Shuvo & Bibha</div>
+        </div>
+      </div>
+
+      <div class="authForm">
+        <label class="fieldLabel">Email</label>
+        <input id="email" class="input" placeholder="yourname@gmail.com" autocomplete="username"/>
+
+        <label class="fieldLabel">Password</label>
+        <input id="pass" class="input" type="password" placeholder="" autocomplete="current-password"/>
+
+        <button id="loginBtn" class="btnPrimary">Login</button>
+        <p id="msg" class="error"></p>
+
+        <div class="mutedSmall">
+          Allowed: <b>thshuvo22@gmail.com</b> / <b>mahirabibha@gmail.com</b><br/>
+          (I also allow <b>thshuvo22@gamil.com</b> to avoid typo issues)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>initLogin();</script>
+</body>
+</html>
